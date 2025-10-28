@@ -10,7 +10,8 @@ import os
 app = FastAPI()
 
 # Serve static frontend files
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Load the trained model once at startup
 model = keras.models.load_model("object.keras", compile=False)
